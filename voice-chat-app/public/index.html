@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AI Voice Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Voice Conversation</h1>
+        </header>
+        
+        <div class="controls">
+            <div class="model-selection">
+                <label for="voice-select">AI Voice:</label>
+                <select id="voice-select">
+                    <option value="alloy">Alloy</option>
+                    <option value="ash">Ash</option>
+                    <option value="ballad">Ballad</option>
+                    <option value="coral">Coral</option>
+                    <option value="echo">Echo</option>
+                    <option value="fable">Fable</option>
+                    <option value="onyx">Onyx</option>
+                    <option value="nova">Nova</option>
+                    <option value="sage">Sage</option>
+                    <option value="shimmer">Shimmer</option>
+                    <option value="verse">Verse</option>
+                </select>
+            </div>
+            
+            <div class="audio-device-selection">
+                <label for="audio-device-select">入力デバイス:</label>
+                <select id="audio-device-select">
+                    <option value="">デバイスを読み込み中...</option>
+                </select>
+                <button id="refresh-devices-btn" class="refresh-btn">更新</button>
+            </div>
+            
+            <div class="status-indicator">
+                <div id="status-light" class="status-light disconnected"></div>
+                <span id="status-text">Disconnected</span>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="start-btn" class="primary-btn">Start Conversation</button>
+                <button id="stop-btn" class="secondary-btn" disabled>End Conversation</button>
+            </div>
+        </div>
+        
+        <div class="conversation-container">
+            <div id="conversation" class="conversation">
+                <!-- Conversation messages will be inserted here -->
+            </div>
+        </div>
+        
+        <div class="log-container">
+            <h3>Session Log</h3>
+            <div id="log" class="log"></div>
+        </div>
+        
+        <div class="waveform-container">
+            <h3>入力音声の波形</h3>
+            <canvas id="waveform-canvas" width="800" height="100"></canvas>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
