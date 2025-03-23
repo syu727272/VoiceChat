@@ -1,0 +1,252 @@
+:root {
+    --primary-color: #4a6fa5;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --background-color: #f5f7fa;
+    --border-radius: 4px;
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--background-color);
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+h1 {
+    color: var(--primary-color);
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .controls {
+        grid-template-columns: 1fr;
+    }
+}
+
+.model-selection, .audio-device-selection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+select {
+    padding: 8px;
+    border-radius: var(--border-radius);
+    border: 1px solid #ddd;
+    flex-grow: 1;
+}
+
+.refresh-btn {
+    padding: 8px 12px;
+    background-color: var(--light-color);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.refresh-btn:hover {
+    background-color: #e9ecef;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.status-light {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.disconnected {
+    background-color: var(--danger-color);
+}
+
+.connected {
+    background-color: var(--success-color);
+}
+
+.listening {
+    background-color: var(--warning-color);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.primary-btn, .secondary-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #3a5a8a;
+}
+
+.primary-btn:disabled {
+    background-color: #a0b2c7;
+    cursor: not-allowed;
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.secondary-btn:hover {
+    background-color: #5a6268;
+}
+
+.secondary-btn:disabled {
+    background-color: #b1b5b9;
+    cursor: not-allowed;
+}
+
+.conversation-container {
+    margin-bottom: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+    padding: 10px;
+}
+
+.conversation {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 80%;
+    position: relative;
+}
+
+.message.user {
+    align-self: flex-end;
+    background-color: var(--primary-color);
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.message.ai {
+    align-self: flex-start;
+    background-color: #e9e9e9;
+    border-bottom-left-radius: 4px;
+}
+
+.message-meta {
+    font-size: 0.7rem;
+    color: #888;
+    margin-top: 5px;
+}
+
+.log-container {
+    margin-bottom: 20px;
+}
+
+.log {
+    height: 150px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+    padding: 10px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    background-color: #f8f9fa;
+}
+
+.log-entry {
+    margin-bottom: 5px;
+}
+
+.log-entry.info {
+    color: var(--dark-color);
+}
+
+.log-entry.success {
+    color: var(--success-color);
+}
+
+.log-entry.error {
+    color: var(--danger-color);
+}
+
+.log-entry.warning {
+    color: var(--warning-color);
+}
+
+.waveform-container {
+    margin-bottom: 20px;
+}
+
+#waveform-canvas {
+    width: 100%;
+    height: 100px;
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+}

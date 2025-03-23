@@ -1,16 +1,19 @@
 
 {
-  "name": "nodejs",
+  "name": "openai-realtime-voice-chat",
   "version": "1.0.0",
-  "description": "",
+  "description": "OpenAI Realtime Voice Chat Application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "keywords": [],
+  "keywords": ["openai", "voice", "chat", "realtime", "webrtc"],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^18.0.6"
+    "@types/node": "^18.0.6",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.9"
   }
 }
